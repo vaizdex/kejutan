@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For The Brightest Star ✨</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    height:100vh;
+    font-family:'Poppins',sans-serif;
+    background:#0d0d16;
+    position:relative;
+}
+
+/* ======================
+BACKGROUND
+====================== */
+
+.bg{
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(circle at top left,#ffb3d1 0%,transparent 25%),
+    radial-gradient(circle at bottom right,#bde0fe 0%,transparent 30%),
+    linear-gradient(160deg,#0c0c14,#151528,#090910);
+
+    animation:bgMove 10s ease infinite alternate;
+}
+
+@keyframes bgMove{
+    from{transform:scale(1);}
+    to{transform:scale(1.08);}
+}
+
+/* ======================
+SPOTLIGHTS
+====================== */
+
+.spotlight{
+    position:absolute;
+    width:300px;
+    height:100vh;
+    background:linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.15),
+        transparent
+    );
+
+    filter:blur(20px);
+
+    transform:rotate(15deg);
+
+    animation:lightMove 6s ease-in-out infinite alternate;
+}
+
+.spotlight:nth-child(2){
+    left:60%;
+    animation-delay:2s;
+}
+
+@keyframes lightMove{
+    from{
+        transform:rotate(15deg) translateX(-50px);
+    }
+    to{
+        transform:rotate(-15deg) translateX(50px);
+    }
+}
+
+/* ======================
+INTRO
+====================== */
+
+.intro{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    z-index:20;
+
+    background:#0d0d16;
+
+    animation:introFade 2s ease forwards;
+    animation-delay:3s;
+}
+
+.intro h1{
+    color:white;
+    font-size:2rem;
+    letter-spacing:8px;
+    font-weight:300;
+
+    opacity:0;
+
+    animation:textShow 2s forwards;
+}
+
+.intro p{
+    margin-top:10px;
+
+    color:#ffffff99;
+
+    letter-spacing:4px;
+    font-size:0.8rem;
+
+    opacity:0;
+
+    animation:textShow 2s forwards;
+    animation-delay:0.5s;
+}
+
+@keyframes textShow{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+        letter-spacing:15px;
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+        letter-spacing:6px;
+    }
+}
+
+@keyframes introFade{
+    to{
+        opacity:0;
+        visibility:hidden;
+    }
+}
+
+/* ======================
+MAIN CONTENT
+====================== */
+
+.main{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+
+    animation:mainShow 2s forwards;
+    animation-delay:3.2s;
+
+    z-index:10;
+}
+
+@keyframes mainShow{
+    to{
+        opacity:1;
+    }
+}
+
+/* ======================
+CARD
+====================== */
+
+.card{
+
+    width:340px;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:35px;
+
+    padding:35px 28px;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,0.6),
+    0 0 40px rgba(255,182,193,0.15);
+
+    transform:translateY(40px) scale(0.9);
+
+    opacity:0;
+
+    animation:cardAppear 1.5s ease forwards;
+    animation-delay:3.5s;
+}
+
+@keyframes cardAppear{
+    to{
+        transform:translateY(0) scale(1);
+        opacity:1;
+    }
+}
+
+/* SHINE */
+
+.card::before{
+    content:'';
+
+    position:absolute;
+
+    width:200%;
+    height:200%;
+
+    top:-100%;
+    left:-100%;
+
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.12),
+        transparent
+    );
+
+    transform:rotate(25deg);
+
+    animation:shine 6s linear infinite;
+}
+
+@keyframes shine{
+    from{
+        transform:translateX(-100%) rotate(25deg);
+    }
+
+    to{
+        transform:translateX(100%) rotate(25deg);
+    }
+}
+
+/* ======================
+LIGHTSTICK
+====================== */
+
+.lightstick{
+    font-size:3rem;
+    margin-bottom:15px;
+
+    animation:float 2.5s ease infinite;
+}
+
+.profile-wrap{
+
+    display:flex;
+    justify-content:center;
+    margin-bottom:20px;
+}
+
+.profile{
+
+    width:95px;
+    height:95px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:4px solid rgba(255,255,255,0.7);
+
+    box-shadow:
+    0 0 25px rgba(255,175,204,0.6),
+    0 0 60px rgba(255,255,255,0.15);
+
+    animation:float 3s ease infinite;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+/* ======================
+TEXT
+====================== */
+
+.card h2{
+    color:white;
+    font-size:2.8rem;
+    font-family:'Great Vibes',cursive;
+    font-weight:normal;
+
+    margin-bottom:15px;
+}
+
+.subtitle{
+    color:#ffcae0;
+    font-size:0.8rem;
+    letter-spacing:3px;
+    margin-bottom:20px;
+}
+
+.card p{
+    color:#f2f2f2cc;
+    line-height:1.9;
+    font-size:0.92rem;
+}
+
+/* ======================
+BUTTON
+====================== */
+
+.btn{
+    margin-top:28px;
+
+    padding:14px 28px;
+
+    border:none;
+    border-radius:999px;
+
+    background:
+    linear-gradient(135deg,#ffafcc,#ffd6e7);
+
+    color:#222;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:
+    0 0 20px rgba(255,175,204,0.5);
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+/* ======================
+FLOATING PARTICLES
+====================== */
+
+.particle{
+    position:absolute;
+    pointer-events:none;
+
+    animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(100vh) scale(0);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-120vh) scale(1);
+        opacity:0;
+    }
+}
+
+/* ======================
+BOTTOM CROWD LIGHTS
+====================== */
+
+.crowd{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:120px;
+
+    background:
+    radial-gradient(circle,#ffafcc 2px,transparent 3px);
+
+    background-size:30px 30px;
+
+    opacity:0.2;
+
+    animation:crowdMove 8s linear infinite;
+}
+
+@keyframes crowdMove{
+    from{
+        background-position:0 0;
+    }
+
+    to{
+        background-position:200px 0;
+    }
+}
+
+/* ======================
+MOBILE
+====================== */
+
+@media(max-width:480px){
+
+    .card{
+        width:88%;
+        padding:30px 22px;
+    }
+
+    .card h2{
+        font-size:2.4rem;
+    }
+
+    .card p{
+        font-size:0.86rem;
+    }
+
+    .intro h1{
+        font-size:1.5rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="spotlight"></div>
+<div class="spotlight"></div>
+
+<div class="crowd"></div>
+
+<!-- INTRO -->
+
+<div class="intro">
+
+    <h1>TONIGHT'S SPECIAL STAGE</h1>
+
+    <p>PREPARING THE MAIN CHARACTER ✨</p>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+    <div class="card">
+
+        <div class="profile-wrap">
+
+    <img src="Screenshot_20260429_182546.jpg" class="profile">
+
+</div>
+
+        <h2>Happy Birthday</h2>
+
+        <div class="subtitle">
+            TODAY'S CENTER MEMBER 🌸
+        </div>
+
+        <p>
+            Another year,
+            another stage,
+            another beautiful story💖<br><br>
+
+            Semoga kamu selalu bersinar
+            like your idol di atas panggung ✨<br><br>
+
+            I hope di umur yang baru ini
+            kau bisa lebih banyak ketawa,
+                lebih banyak bahagia,
+            dan lebih percaya sama diri kamu sendiri🌸<br><br>
+
+            "The brightest stars still started small."<br><br>
+            
+            -dibuat oleh faiz dengan ❤️ 
+        </p>
+
+        <button class="btn" onclick="startStage()">
+            Turn On The Lightstick ✨
+        </button>
+
+    </div>
+
+</div>
+
+<audio id="music" preload="auto">
+<source src="ssstik.io_1777460327809.mp3" type="audio/mpeg">
+</audio>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+
+const music = document.getElementById("music");
+
+/* MUSIC */
+
+setTimeout(()=>{
+    music.play().catch(()=>{});
+},4000);
+
+/* CONFETTI */
+
+function startStage(){
+
+    const music = document.getElementById("music");
+
+    music.volume = 0.7;
+
+    music.play();
+
+    confetti({
+        particleCount:220,
+        spread:120,
+        origin:{y:0.6}
+    });
+
+}
+
+/* FLOATING PARTICLES */
+
+function createParticle(){
+
+    const particle =
+    document.createElement("div");
+
+    particle.classList.add("particle");
+
+    const icons = [
+        "🟢 ",
+        "🔵 ",
+        "🟡 ",
+        "🔴 ",
+        "🟣 "
+    ];
+
+    particle.innerHTML =
+    icons[Math.floor(Math.random()*icons.length)];
+
+    particle.style.left =
+    Math.random()*100 + "vw";
+
+    particle.style.fontSize =
+    (Math.random()*18 + 14) + "px";
+
+    particle.style.animationDuration =
+    (Math.random()*4 + 5) + "s";
+
+    document.body.appendChild(particle);
+
+    setTimeout(()=>{
+        particle.remove();
+    },9000);
+}
+
+setInterval(createParticle,700);
+
+</script>
+
+</body>
+</html>
